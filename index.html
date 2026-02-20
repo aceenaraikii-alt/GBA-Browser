@@ -857,18 +857,17 @@
             if(!e.target.closest('.sys-tray') && !e.target.closest('#calendar-popup')) document.getElementById('calendar-popup').style.display='none';
         };
         function hideCtx() { document.getElementById('ctx-menu').style.display='none'; }
-                 function bootNativeGame(event, tId) {
+                         function bootNativeGame(event, tId) {
             const file = event.target.files[0];
             if (!file) return;
 
             const menu = document.getElementById(`native-menu-${tId}`);
             const container = document.getElementById(`native-screen-container-${tId}`);
             
-            // Hide the menu, reveal the game screen container
             menu.style.display = 'none';
             container.style.display = 'block';
 
-            // Point EmulatorJS to your local "emulator" folder
+            // Point EmulatorJS to your GitHub 'emulator' folder
             window.EJS_player = `#native-screen-container-${tId}`; 
             window.EJS_core = 'gba'; 
             window.EJS_gameName = file.name;
@@ -876,10 +875,9 @@
             window.EJS_startOnLoaded = true;
             window.EJS_pathtodata = 'emulator/';
 
-            // Convert local file to readable data
             window.EJS_gameUrl = URL.createObjectURL(file);
 
-            // Start the engine using your local loader.js
+            // Start the engine using the loader.js from your repo
             const script = document.createElement('script');
             script.src = 'emulator/loader.js';
             document.body.appendChild(script);
@@ -887,4 +885,5 @@
         
    </script>
 </body>
+
 </html>
