@@ -869,7 +869,9 @@
 
             // Point EmulatorJS to your GitHub 'emulator' folder
             window.EJS_player = `#native-screen-container-${tId}`; 
-             window.EJS_core = '';
+             if (file.name.includes('.gba')) window.EJS_core = 'gba';
+if (file.name.includes('.bin') || file.name.includes('.cue')) window.EJS_core = 'psx';
+                             
             window.EJS_gameName = file.name;
             window.EJS_color = '#ff004c'; 
             window.EJS_startOnLoaded = true;
@@ -887,6 +889,7 @@
 </body>
 
 </html>
+
 
 
 
