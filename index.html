@@ -718,7 +718,7 @@
     </div>
     <div style="display:flex; background:#222; border-bottom:1px solid #444; height:35px;">
         <button style="flex:1; background:none; border:none; color:#ccc; cursor:pointer; font-size:11px; border-right:1px solid #444;" 
-            onclick="document.getElementById('emu-frame-${tId}').src='https://gba.44670.org/'">
+            onclick="document.getElementById('emu-frame-${tId}').src='emulator/index.html'">
             🎮 GBA (44VBA)
         </button>
         <button style="flex:1; background:none; border:none; color:#ccc; cursor:pointer; font-size:11px;" 
@@ -727,7 +727,8 @@
         </button>
     </div>
     <div class="win-body" style="background:black; position:relative; height:calc(100% - 35px);">
-        <iframe id="emu-frame-${tId}" src="https://gba.44670.org/" style="border:none; width:100%; height:100%;" allow="autoplay; fullscreen; gamepad; cross-origin-isolated"></iframe>
+        <iframe id="emu-frame-${tId}" src="emulator/index.html"
+        style="border:none; width:100%; height:100%;" allow="autoplay; fullscreen; gamepad; cross-origin-isolated"></iframe>
     </div>
 </div>
 
@@ -889,6 +890,7 @@ if (file.name.includes('.bin') || file.name.includes('.cue')) window.EJS_core = 
 </body>
 
 </html>
+
 
 
 
